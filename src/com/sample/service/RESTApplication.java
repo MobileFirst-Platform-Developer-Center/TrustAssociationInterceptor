@@ -10,7 +10,7 @@
     IBM HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS OR MODIFICATIONS TO THE SAMPLE SOURCE CODE.
 
  */
-package com.artem.service;
+package com.sample.service;
 
 import java.util.HashSet;
 import java.util.Set;

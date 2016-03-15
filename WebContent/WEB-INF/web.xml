@@ -19,7 +19,7 @@
     <servlet-class>org.apache.wink.server.internal.servlet.RestServlet</servlet-class>
     <init-param>
       <param-name>javax.ws.rs.Application</param-name>
-      <param-value>com.artem.service.RESTApplication</param-value>
+      <param-value>com.sample.service.RESTApplication</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
@@ -28,7 +28,7 @@
     <servlet-name>RESTServlet</servlet-name>
     <url-pattern>/*</url-pattern>
   </servlet-mapping>
-  
+
   <security-constraint>
       <web-resource-collection>
           <web-resource-name>RESTServlet</web-resource-name>
@@ -40,9 +40,9 @@
   </security-constraint>
 
   <security-role id="SecurityRole_TAIUserRole" >
-      <description>This is the role that MFP OAuthTAI uses to protect the resource, and it is required to be mapped to 'All Authenticated in Application' in WAS and 'ALL_AUTHENTICATED_USERS' in Liberty</description> 
+      <description>This is the role that MFP OAuthTAI uses to protect the resource, and it is required to be mapped to 'All Authenticated in Application' in WAS and 'ALL_AUTHENTICATED_USERS' in Liberty</description>
       <role-name>TAIUserRole</role-name>
   </security-role>
- 
-  
+
+
 </web-app>
