@@ -15,6 +15,13 @@
 */
 package com.sample.service;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -26,29 +33,24 @@ import org.apache.wink.json4j.JSONObject;
 import com.worklight.security.ClientContext;
 
 
-@Path("/api")
-public class ServiceAPI {
+@WebServlet("/GetBalance")
+public class GetBalance extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
-    @GET
-    @Path("/public")
-    @Produces(MediaType.APPLICATION_JSON)
-    public JSONObject getSomePublicData() throws JSONException
-    {
-    	JSONObject res = new JSONObject();
-    	res.put("title", "Some public backend data");
-    	res.put("description", "Some public backend data returned by a REST service");
-        return res;
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public GetBalance() {
+        super();
+        // TODO Auto-generated constructor stub
     }
 
-    @GET
-    @Path("/protected")
-    @Produces(MediaType.APPLICATION_JSON)
-    public JSONObject getSomeProtectedData() throws JSONException
-    {
-    	JSONObject res = new JSONObject();
-    	res.put("title", "Some protected backend data");
-    	res.put("description", "Some protected backend data returned by a REST service");
-        return res;
-    }
-
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//Return hardcoded value
+		response.getWriter().append("17364.9");
+	}
 }
+
