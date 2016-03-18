@@ -27,7 +27,7 @@ public class RESTApplication extends WinkApplication
 
     static
     {
-        classes.add(ServiceAPI.class);
+        classes.add(GetBalance.class);
         classes.add(JSON4JObjectProvider.class);
     }
 
